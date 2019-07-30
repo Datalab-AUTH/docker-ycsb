@@ -1,0 +1,25 @@
+FROM alpine:latest AS builder
+
+
+COPY ycsb-0.17.0-SNAPSHOT.tar.gz /
+RUN cd /opt \
+  && tar -xzvf /ycsb-0.17.0-SNAPSHOT.tar.gz 
+
+FROM bmedora/alpine-zulu-jdk8:latest-mini
+MAINTAINER engops@bluemedora.com
+
+ENV YCSB_VERSION=0.17.0-SNAPSHOT \
+    PATH=${PATH}:/usr/bin
+
+COPY --from=builder /opt/ /opt/
+
+RUN apk --update --no-cache add python mksh
+
+COPY start.sh /start.sh
+RUN chmod +x /start.sh
+
+ENV ACTION='' DBTYPE='' WORKLETTER='' DBARGS='' RECNUM='' OPNUM=''
+
+WORKDIR "/opt/ycsb-${YCSB_VERSION}"
+
+ENTRYPOINT ["/start.sh"]
