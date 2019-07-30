@@ -65,3 +65,6 @@ You need to pass these four environment variables:
     * See https://github.com/brianfrankcooper/YCSB
     * MUST BE SURROUNDED WITH QUOTES.
     * `'-p KEY0=VALUE0 -p KEY1=VALUE1'`
+    
+ 
+This repo is heavily based on https://github.com/BlueMedoraPublic/alpine-ycsb.
