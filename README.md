@@ -66,5 +66,15 @@ You need to pass these four environment variables:
     * MUST BE SURROUNDED WITH QUOTES.
     * `'-p KEY0=VALUE0 -p KEY1=VALUE1'`
     
+### SSL support for mongodb
+  * `DBTYPE`
+    * `mongodb`
+    * `mongodb-async`
  
+  * SSL usage
+    * Mount ca.pem in /etc/ssl
+    * `-p mongodb.url='mongodb://<dbusername>:<dbpassword>@<dbhost>:<dbport>/admin?w=0&ssl=true'`
+  * No SSL usage
+    * `-p mongodb.url='mongodb://<dbusername>:<dbpassword>@<dbhost>:<dbport>/admin?w=0'`
+  
 This repo is heavily based on https://github.com/BlueMedoraPublic/alpine-ycsb.
