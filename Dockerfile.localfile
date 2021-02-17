@@ -16,7 +16,7 @@ COPY --from=builder /opt/ /opt/
 RUN apk --update --no-cache add python mksh
 
 COPY start.sh sleep.sh /
-RUN chmod +x /start.sh /sleep.h
+RUN chmod +x /start.sh /sleep.sh
 
 ENV ACTION='' DBTYPE='' WORKLETTER='' DBARGS='' RECNUM='' OPNUM=''
 
