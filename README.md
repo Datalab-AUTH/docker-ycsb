@@ -1,5 +1,5 @@
 # docker-ycsb
-YCSB running on maven:3.6.1-jdk-8-slim that uses openjdk:8-jdk-slim.
+YCSB running on maven:3.6.3-jdk-8-slim that uses openjdk:8-jdk-slim.
 
 ### Getting Started
 
