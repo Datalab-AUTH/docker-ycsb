@@ -7,6 +7,7 @@ ENV YCSB_VERSION=0.17.0 \
 RUN apt-get update; \
     apt-get install -y --no-install-recommends \
     python mksh \
+    && apt-get clean \
     && cd /opt \
     && eval curl "-Ls https://github.com/BlueMedoraPublic/YCSB/archive/${YCSB_VERSION}.tar.gz" \
     | tar -xzvf -
