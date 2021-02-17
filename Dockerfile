@@ -13,7 +13,7 @@ RUN apt-get update; \
     | tar -xvzf -
 
 COPY start.sh sleep.sh /
-RUN chmod +x /start.sh /sleep.h
+RUN chmod +x /start.sh /sleep.sh
 
 ENV ACTION='' DBTYPE='' WORKLETTER='' DBARGS='' RECNUM='' OPNUM=''
 
