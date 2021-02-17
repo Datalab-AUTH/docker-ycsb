@@ -1,7 +1,7 @@
 FROM maven:3.6.3-jdk-8-slim
 MAINTAINER engops@bluemedora.com
 
-ENV YCSB_VERSION=0.17.0-SNAPSHOT \
+ENV YCSB_VERSION=0.17.0 \
     PATH=${PATH}:/usr/bin
 
 RUN apt-get update; \

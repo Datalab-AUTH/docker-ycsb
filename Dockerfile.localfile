@@ -1,14 +1,14 @@
 FROM alpine:latest AS builder
 
 
-COPY ycsb-0.17.0-SNAPSHOT.tar.gz /
+COPY ycsb-0.17.0.tar.gz /
 RUN cd /opt \
-  && tar -xzvf /ycsb-0.17.0-SNAPSHOT.tar.gz 
+  && tar -xzvf /ycsb-0.17.0.tar.gz
 
 FROM bmedora/alpine-zulu-jdk8:latest-mini
 MAINTAINER engops@bluemedora.com
 
-ENV YCSB_VERSION=0.17.0-SNAPSHOT \
+ENV YCSB_VERSION=0.17.0 \
     PATH=${PATH}:/usr/bin
 
 COPY --from=builder /opt/ /opt/
