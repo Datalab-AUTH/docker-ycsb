@@ -17,6 +17,6 @@ RUN chmod +x /start.sh /sleep.sh
 
 ENV ACTION='' DBTYPE='' WORKLETTER='' DBARGS='' RECNUM='' OPNUM=''
 
-WORKDIR "/opt/YCSB-${YCSB_VERSION}"
+WORKDIR "/opt/ycsb-${YCSB_VERSION}"
 
 ENTRYPOINT ["/sleep.sh"]
