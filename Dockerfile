@@ -1,4 +1,4 @@
-FROM maven:3.6.1-jdk-8-slim
+FROM maven:3.6.3-jdk-8-slim
 MAINTAINER engops@bluemedora.com
 
 ENV YCSB_VERSION=0.17.0-SNAPSHOT \
