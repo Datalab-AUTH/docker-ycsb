@@ -9,8 +9,8 @@ RUN apt-get update; \
     python mksh \
     && apt-get clean \
     && cd /opt \
-    && eval curl "-Ls https://github.com/brianfrankcooper/YCSB/releases/download/${YCSB_VERSION}/${YCSB_VERSION}.tar.gz" \
-    | tar -xvf -
+    && curl -Ls https://github.com/brianfrankcooper/YCSB/releases/download/${YCSB_VERSION}/ycsb-${YCSB_VERSION}.tar.gz \
+    | tar -xvzf -
 
 COPY start.sh sleep.sh /
 RUN chmod +x /start.sh /sleep.h
