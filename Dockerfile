@@ -11,11 +11,11 @@ RUN apt-get update; \
     && eval curl "-Ls https://github.com/BlueMedoraPublic/YCSB/archive/${YCSB_VERSION}.tar.gz" \
     | tar -xzvf -
 
-COPY start.sh /start.sh
-RUN chmod +x /start.sh
+COPY start.sh sleep.sh /
+RUN chmod +x /start.sh /sleep.h
 
 ENV ACTION='' DBTYPE='' WORKLETTER='' DBARGS='' RECNUM='' OPNUM=''
 
 WORKDIR "/opt/YCSB-${YCSB_VERSION}"
 
-ENTRYPOINT ["/start.sh"]
+ENTRYPOINT ["/sleep.sh"]
